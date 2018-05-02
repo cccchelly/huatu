@@ -1,0 +1,56 @@
+ext.versions = [
+
+        // 通用
+        buildTools         : '25.0.3',
+
+        // Plugins
+        androidPlugin      : '2.3.3',
+        retrolambdaPlugin  : '3.7.0',
+
+        // 测试库
+        jUnit              : '4.12',
+        espresso           : '2.2.2',
+        espressoTestRules  : '0.5',
+        espressoTestRunner : '0.5',
+        findbugsAnnotations: '2.0.1',
+
+        // Support 库
+        supportLibraries   : '25.3.1',
+        constraintLayout   : '1.0.2',
+        multidexLib        : '1.0.1',
+
+        // 第三方库
+        mosbyMvp           : '3.0.4',
+
+        // DI
+        dagger             : '2.11',
+
+        // Rx
+        rxAndroid          : '2.0.1',
+        rxJava             : '2.1.3',
+
+        // Network
+        loggingInterceptor : '3.8.1',
+        okHttp3            : '3.8.1',
+        retrofit           : '2.3.0',
+
+        // Log
+        logger             : '2.1.1',
+
+        //
+        butterknife        : '8.8.1',
+
+        // router
+        aRouterApi         : '1.2.2',
+        aRouterCompiler    : '1.1.3',
+
+        BaseAdapterHelper  : '2.9.31',
+
+        // UI 库
+        materialEditText   : '2.1.4',
+        processButton      : '1.0.4',
+        fresco             : '1.5.0',
+
+        // Debug
+        sherlock           : '1.0.3'
+]

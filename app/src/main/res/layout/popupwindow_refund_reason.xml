@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:paddingLeft="8dp"
+              android:paddingRight="135dp"
+              android:background="@drawable/shape_order_btn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_oos"
+        android:textColor="@color/text_333333"
+        android:text="缺货"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/tv_give_up"
+        android:textColor="@color/text_333333"
+        android:text="不想要了"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/tv_reset"
+        android:textColor="@color/text_333333"
+        android:text="重新拍"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+    <TextView
+        android:id="@+id/tv_lose"
+        android:textColor="@color/text_333333"
+        android:text="未收到货"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/tv_other"
+        android:textColor="@color/text_333333"
+        android:text="与商家协议退款"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+
+</LinearLayout>

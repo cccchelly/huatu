@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:background="@color/trans"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="确定"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/white"
+        android:background="@drawable/selector_login_btn"/>
+
+    <LinearLayout
+        android:background="@color/bg_ffffff"
+        android:paddingLeft="@dimen/common_pd_left"
+        android:paddingRight="@dimen/common_pd_right"
+        android:layout_marginTop="20dp"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_goods"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                app:actualImageScaleType="centerCrop"
+                app:placeholderImage="@drawable/ic_default_sdv_loading"
+                app:placeholderImageScaleType="focusCrop"
+                app:viewAspectRatio="1"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginLeft="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_goods_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    tools:text="北欧风格沙发，大小可拆洗，适合所有户型简约风格，你值得拥有"/>
+
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥ 888.00"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <com.alex.code.foundation.view.CounterView
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/counterView"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_repertory"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="库存：1000 \n尺码：60*60 ; 颜色：红色"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_attr_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_color"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="款式颜色:"/>-->
+
+                <!--<com.zhy.view.flowlayout.TagFlowLayout-->
+                    <!--android:id="@+id/flowlayout_color"-->
+                    <!--zhy:max_select="1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_attrs"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="尺寸:"/>-->
+                <!--<com.zhy.view.flowlayout.TagFlowLayout-->
+                    <!--android:id="@+id/flowlayout_attrs"-->
+                    <!--zhy:max_select="1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--/>-->
+            <!--</LinearLayout>-->
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_close"
+        android:layout_alignParentRight="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#00000000"
+        android:src="@drawable/ic_cart_close"/>
+</RelativeLayout>

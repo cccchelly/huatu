@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_default_sdv_loading"
+        app:placeholderImageScaleType="focusCrop"
+        app:viewAspectRatio="1"/>
+
+    <ImageButton
+        android:id="@+id/ib_delete"
+        android:layout_alignParentRight="true"
+        android:background="@color/trans"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_delete"/>
+</RelativeLayout>

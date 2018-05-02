@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:paddingLeft="@dimen/common_pd_left"
+              android:paddingRight="@dimen/common_pd_right"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@color/bg_f7f7f7"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="100dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_pic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:actualImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/ic_default_sdv_loading"
+            app:placeholderImageScaleType="focusCrop"
+            app:viewAspectRatio="1"
+            />
+
+        <RelativeLayout
+            android:layout_marginLeft="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_goods_des"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_333333"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                tools:text="北欧风格沙发，大小可拆洗，适合所有户型简约风格，你值得拥有"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_attr"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:textSize="12sp"
+                android:textColor="@color/text_9c9c9c"
+                android:text="颜色: 红色;尺寸: 60*60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_9c9c9c"
+                    android:text="单价: $800.00"/>
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_9c9c9c"
+                    android:text="数量: 2"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/red"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/shape_shop_enter"
+                android:gravity="center"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:text="评价"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

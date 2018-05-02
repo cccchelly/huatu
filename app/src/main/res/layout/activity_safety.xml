@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:background="@color/bg_f0f0f0"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.alex.code.foundation.view.CustomToolBar
+        android:id="@id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/ll_changeName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="22dp"
+        android:paddingRight="18dp">
+
+        <TextView
+            android:textColor="@color/text_848484"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会员名"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            tools:text="我是一名忠诚的用户"
+            android:textColor="@color/text_333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"
+        />
+
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/ll_changeWord"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="22dp"
+        android:paddingRight="18dp">
+
+        <TextView
+            android:textColor="@color/text_848484"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改手机号码"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_right_next"
+            tools:text="18011112222"
+            android:textColor="@color/text_333333"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"
+        />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:text="修改登录密码"
+        android:textColor="@color/text_848484"
+        style="@style/Text_common_item"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"
+        />
+
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/ll_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="22dp"
+        android:paddingRight="18dp">
+
+        <TextView
+            android:textColor="@color/text_848484"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绑定邮箱"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_email"
+            tools:text="未绑定"
+            android:textColor="@color/text_333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_right_next"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"
+        />
+    <TextView
+        android:id="@+id/tv_logout"
+        android:text="退出登录"
+        android:textColor="@color/text_848484"
+        style="@style/Text_common_item"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"
+        />
+
+</LinearLayout>

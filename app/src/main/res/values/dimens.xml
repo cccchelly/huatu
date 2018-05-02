@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <dimen name="gap" >100dp</dimen >
+    <dimen name="common_pd_left" >22dp</dimen >
+    <dimen name="common_pd_right" >18dp</dimen >
+</resources >

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">灵武精品羊绒</string>
+
+    <string name="pageBehavior" translatable="false" >com.alex.code.foundation.view.PageBehavior</string >
+    <string name="action_settings">设置</string>
+
+    <string name="goods_old_money">原价: ￥%1$s元</string>
+    <string name="goods_express_fee">快递: %1$s</string>
+</resources>

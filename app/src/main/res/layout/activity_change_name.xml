@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.alex.code.foundation.view.CustomToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/username"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="用户名"
+        android:textCursorDrawable="@drawable/text_cursor"
+        app:met_floatingLabel="highlight"
+        app:met_primaryColor="@color/btn_color"
+
+        />
+
+    <TextView
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="18dp"
+        android:id="@+id/tv_save"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="保存"
+        android:gravity="center"
+        android:background="@drawable/selector_login_btn"
+        android:textColor="@color/bg_ffffff"/>
+
+</LinearLayout>

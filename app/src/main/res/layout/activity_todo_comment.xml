@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/common_pd_left"
+              android:paddingRight="@dimen/common_pd_right"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.alex.code.foundation.view.CustomToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/bg_f7f7f7"
+                android:gravity="center_vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdv_pic"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:actualImageScaleType="centerCrop"
+                    app:placeholderImage="@drawable/ic_default_sdv_loading"
+                    app:placeholderImageScaleType="focusCrop"
+                    app:viewAspectRatio="1"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="14dp">
+
+                    <TextView
+                        android:id="@+id/tv_goods_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_333333"
+                        android:textSize="12sp"
+                        tools:text="北欧风格沙发，大小可拆洗，适合所有户型简约风格，你值得拥有"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_good"
+                            style="@style/maintab_button"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_todo_comment_rb"
+                            android:checked="true"
+                            android:text="好评"
+                            android:textColor="@drawable/selector_todo_comment_rb_text"
+                            android:textSize="16sp"/>
+
+
+                        <RadioButton
+                            android:id="@+id/rb_mid"
+                            style="@style/maintab_button"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_todo_comment_rb"
+                            android:text="中评"
+                            android:textColor="@drawable/selector_todo_comment_rb_text"
+                            android:textSize="16sp"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_bad"
+                            style="@style/maintab_button"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_todo_comment_rb"
+                            android:text="差评"
+                            android:textColor="@drawable/selector_todo_comment_rb_text"
+                            android:textSize="16sp"/>
+                    </RadioGroup>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/bg_f0f0f0"
+                android:gravity="left"
+                android:hint="请评价你的购物体验和商品质量"
+                android:maxLength="500"
+                android:padding="5dp"
+                android:textSize="14sp"/>
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_select"-->
+            <!--android:layout_width="70dp"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:src="@drawable/ic_default_sdv_loading"/>-->
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="店铺评价"/>
+
+                <RatingBar
+                    android:id="@+id/shop_ratingBar"
+                    style="@style/fiveRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:stepSize="1"/>
+                <!--<android.support.v7.widget.AppCompatRatingBar-->
+                <!--android:id="@+id/ratingBar"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:minHeight="20dp"-->
+                <!--android:stepSize="1"-->
+                <!--android:rating="3"-->
+                <!--style="?android:attr/ratingBarStyleSmall"-->
+                <!--android:progressTint="@color/red"-->
+                <!--android:progressBackgroundTint="@color/black"-->
+                <!--android:secondaryProgressTint="@color/black"/>-->
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="物流评价"/>
+
+                <RatingBar
+                    android:id="@+id/logistics_ratingBar"
+                    style="@style/fiveRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:stepSize="1"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_commit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_btn_red"
+                android:gravity="center"
+                android:text="发布"
+                android:textColor="@color/white"/>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

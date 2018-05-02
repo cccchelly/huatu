@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DoubleScrollViewWrapper">
+        <attr name="doublescrollviewwrapper_padding" format="integer"></attr>
+    </declare-styleable>
+    <declare-styleable name="Page">
+        <attr name="pageone_padding" format="integer"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="my_counter_size">
+        <attr name="count_max" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="EaseSwitchButton">
+        <attr name="switchOpenImage" format="reference"/>
+        <attr name="switchCloseImage" format="reference"/>
+        <attr name="switchStatus">
+            <enum name="open" value="0"/>
+            <enum name="close" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

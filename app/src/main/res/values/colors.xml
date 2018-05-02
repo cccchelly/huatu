@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f7f7f7</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccentDark">#F50057</color>
+
+    <color name="btn_color">#d43e2f</color>
+
+    <color name="btn_color_trans50">#80d43e2f</color>
+    <color name="trans">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="white_70">#b3ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="red_trrans50">#80ff0000</color>
+
+    <!--<color name="tans">#0000000</color>-->
+
+    <color name="text_system">#8A000000</color>
+    <color name="text_9b9b9b">#9b9b9b</color>
+    <color name="text_9c9c9c">#9c9c9c</color>
+    <color name="text_999999">#999999</color>
+    <color name="text_848484">#848484</color>
+    <color name="text_14a83b">#14a83b</color>
+    <color name="text_404040">#404040</color>
+    <color name="text_333333">#333333</color>
+    <color name="text_666666">#666666</color>
+    <color name="text_454545">#454545</color>
+    <color name="text_3e8ae7">#3e8ae7</color>
+    <color name="link_blue">#027cfb</color>
+    <color name="bg_ffffff">#ffffff</color>
+    <color name="bg_f7f7f7">#f7f7f7</color>
+    <color name="bg_f0f0f0">#f0f0f0</color>
+    <color name="bg_f6f6f6">#f6f6f6</color>
+    <color name="bg_d5d5d5">#d5d5d5</color>
+    <color name="bg_cccccc">#cccccc</color>
+    <color name="black">#000</color>
+    <color name="black_50">#80000000</color>
+    <color name="line">#f0f0f0</color>
+
+    <color name="uncompleted_color">#A3E0D9</color>
+    <color name="uncompleted_text_color">#F8F8F8</color>
+</resources>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/common_pd_left"
+              android:paddingRight="@dimen/common_pd_right"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical">
+        
+        <TextView
+            android:id="@+id/tv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_333333"
+            android:text="小米旗舰店"
+            android:drawableLeft="@drawable/ic_dianpu"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_right_next"/>
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/red"
+            android:text="未付款订单"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/bg_f7f7f7"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="100dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_pic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:actualImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/ic_default_sdv_loading"
+            app:placeholderImageScaleType="focusCrop"
+            app:viewAspectRatio="1"
+            />
+
+        <RelativeLayout
+            android:layout_marginLeft="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_goods_des"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_333333"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                tools:text="北欧风格沙发，大小可拆洗，适合所有户型简约风格，你值得拥有"/>
+
+            <TextView
+                android:id="@+id/tv_attr"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:textSize="12sp"
+                android:textColor="@color/text_9c9c9c"
+                android:text="颜色: 红色;尺寸: 60*60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_9c9c9c"
+                    android:text="单价: $800.00"/>
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_9c9c9c"
+                    android:text="数量: 2"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_sum_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_333333"
+            android:textSize="12sp"
+            android:text="共计1件商品"
+            />
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:id="@+id/tv_sum_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/text_333333"
+            android:text="合计: $800.00（含运费$0.00）"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"/>
+
+    <LinearLayout
+        android:gravity="right|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/tv_btn_1"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:text="延长发货"
+            android:textColor="@color/text_666666"
+            android:background="@drawable/shape_order_btn"/>
+        <TextView
+            android:id="@+id/tv_btn_2"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:text="取消订单"
+            android:textColor="@color/text_666666"
+            android:background="@drawable/shape_order_btn"/>
+        <TextView
+            android:id="@+id/tv_btn_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:text="评价"
+            android:textColor="@color/text_666666"
+            android:background="@drawable/shape_order_btn"/>
+    </LinearLayout>
+</LinearLayout>

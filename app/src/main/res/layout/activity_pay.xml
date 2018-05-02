@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/bg_f0f0f0"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.alex.code.foundation.view.CustomToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:text="￥799.00"
+        android:background="@color/white"
+        android:textColor="@color/text_333333"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rb_zhifubao"
+            android:paddingLeft="@dimen/common_pd_left"
+            android:paddingRight="@dimen/common_pd_right"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:checked="true"
+            android:text="支付宝"
+            android:drawablePadding="20dp"
+            android:drawableRight="@drawable/selector_rb_pay"
+            android:drawableLeft="@drawable/ic_zhifubao"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/line"/>
+
+        <RadioButton
+            android:id="@+id/rb_weixin"
+            android:paddingLeft="@dimen/common_pd_left"
+            android:paddingRight="@dimen/common_pd_right"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:text="微信支付"
+            android:drawablePadding="20dp"
+            android:drawableRight="@drawable/selector_rb_pay"
+            android:drawableLeft="@drawable/ic_weixin"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/line"/>
+
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/rb_bank"
+            android:paddingLeft="@dimen/common_pd_left"
+            android:paddingRight="@dimen/common_pd_right"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:text="银联支付"
+            android:drawablePadding="20dp"
+            android:drawableRight="@drawable/selector_rb_pay"
+            android:drawableLeft="@drawable/ic_bank"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_pay"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="立即支付"
+        android:textColor="@color/white"
+        android:background="@color/btn_color"/>
+</LinearLayout>

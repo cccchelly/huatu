@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:layout_marginLeft="8dp"
+              android:layout_marginRight="8dp"
+              android:layout_width="wrap_content"
+              android:layout_height="170dp">
+
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:textColor="@color/black"
+        android:text="飞翔衣"
+        android:gravity="center"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_pic"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="10dp"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_default_sdv_loading"
+        app:placeholderImageScaleType="focusCrop"
+        />
+
+    <TextView
+        android:id="@+id/tv_now_price"
+        android:textColor="@color/text_333333"
+        android:text="现价1000.00"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="12sp"
+        android:id="@+id/tv_old_price"
+        android:textColor="@color/text_999999"
+        android:text="原价1000.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

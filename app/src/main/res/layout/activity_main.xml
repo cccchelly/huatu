@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/maintab_rg"
+        android:layout_width="match_parent"
+        android:paddingTop="2dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/bg_ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_ic_home"
+            style="@style/maintab_button"
+            android:checked="true"
+            android:text="首页"/>
+
+        <RadioButton
+            android:id="@+id/rb_classify"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_ic_category"
+            style="@style/maintab_button"
+            android:text="分类"
+            android:layout_alignParentTop="true"/>
+
+        <RadioButton
+            android:id="@+id/rb_shop"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_ic_shop"
+            style="@style/maintab_button"
+            android:text="购物车"/>
+
+        <RadioButton
+            android:id="@+id/rb_mine"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_ic_mine"
+            style="@style/maintab_button"
+            android:text="我的"/>
+
+    </RadioGroup>
+
+
+    <com.alex.code.foundation.view.NonSwipeViewPager
+        android:id="@+id/no_swipe_vp"
+        android:layout_above="@id/maintab_rg"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:layout_above="@id/maintab_rg"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"
+        />
+</RelativeLayout>

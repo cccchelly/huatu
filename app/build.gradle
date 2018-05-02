@@ -1,0 +1,212 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$versions.androidPlugin"
+        classpath "com.jakewharton:butterknife-gradle-plugin:$versions.butterknife"
+        classpath "me.tatarka:gradle-retrolambda:$versions.retrolambdaPlugin"
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'me.tatarka.retrolambda'
+
+// Settings for the retrolambda plugin. See https://github.com/evant/gradle-retrolambda
+retrolambda {
+    javaVersion JavaVersion.VERSION_1_7
+    incremental true
+}
+
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion versions.buildTools
+    defaultConfig {
+        applicationId "com.alex.code.foundation"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode versionMajor * 1000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+//        versionCode 1
+//        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "UMENG_APPKEY", "\"5a168536f29d984101000066\""
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        ndk {
+            abiFilters 'armeabi','x86'
+        }
+
+        manifestPlaceholders = [
+                application_id : "${applicationId}",
+                UMENG_APPKEY : "5a168536f29d984101000066"
+        ]
+    }
+
+
+    signingConfigs {
+        release {
+//            storeFile file(XINGKE_STORE_FILE)
+//            storePassword XINGKE_STORE_PASSWORD
+//            keyAlias XINGKE_KEY_ALIAS
+//            keyPassword XINGKE_KEY_PASSWORD
+            storeFile file("../debug.jks")
+            storePassword "Ishop2017"
+            keyAlias "ishop"
+            keyPassword "Ishop2017"
+        }
+
+        debug {
+            storeFile file("../debug.jks")
+            storePassword "Ishop2017"
+            keyAlias "ishop"
+            keyPassword "Ishop2017"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            signingConfig signingConfigs.release
+            zipAlignEnabled true    //Zipalign优化
+            shrinkResources false   // 移除无用的resource文件
+            minifyEnabled true  //混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs 'src/main/jniLibs'
+        }
+    }
+
+    productFlavors {
+
+        wandoujia{
+        }
+
+        yingyongbao{
+        }
+
+        productFlavors.all { flavor ->
+                manifestPlaceholders.put("UMENG_CHANNEL",name)
+        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // support
+    compile projectDependencies.supportLibsAppCompat
+    compile projectDependencies.supportLibsConstraintLayout
+    compile projectDependencies.supportLibsMultiDex
+
+    // Logger
+    compile projectDependencies.logger
+
+    // Dagger2
+    compile projectDependencies.dagger
+    annotationProcessor projectDependencies.daggerAnnotationProcessor
+    compile projectDependencies.daggerAndroid
+    compile projectDependencies.daggerAndroidSupport
+    annotationProcessor projectDependencies.daggerAndroidAnnotationProcessor
+
+    // Retrofit
+    compile projectDependencies.retrofit
+    compile projectDependencies.retrofitGson
+    compile projectDependencies.okhttpLoggingInterceptor
+    compile projectDependencies.retrofitRxJava2Adapter
+
+    // MVP
+    compile projectDependencies.mosbyMvp
+    compile projectDependencies.mosbyLce
+    compile projectDependencies.mosbyViewState
+    compile projectDependencies.mosbyNullPresenter
+
+    // Rx
+    compile projectDependencies.rxJava2
+    compile projectDependencies.rxAndroid2
+
+    // Butter Knife
+    compile projectDependencies.butterknife
+    annotationProcessor projectDependencies.butterknifeAnnotationProcessor
+
+    // Router
+    compile projectDependencies.aRouterApi
+    annotationProcessor projectDependencies.aRouterCompiler
+
+    //adapter
+    compile projectDependencies.BaseRecyclerViewAdapterHelper
+
+
+    // UI
+    compile projectDependencies.materialEditText
+    compile projectDependencies.processButton
+    compile projectDependencies.fresco
+
+    compile 'com.orhanobut:dialogplus:1.11@aar'
+    compile 'com.contrarywind:Android-PickerView:3.2.6'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.github.magiepooh:recycler-itemdecoration:1.1.1@aar'
+
+    compile 'com.android.support:design:25.3.1'//版本随意（非必须，引用可以解决无法预览问题）
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    compile 'com.hyman:flowlayout-lib:1.1.2'
+
+    //微信支付
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+
+    //图片裁剪库
+//    compile 'com.github.yalantis:ucrop:2.2.1'
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+    compile 'com.youth.banner:banner:1.4.10'
+
+    //报表统计图
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+
+//    compile 'com.github.promeg:tinypinyin:2.0.3'
+//    compile 'com.yanzhenjie:permission:1.1.2'
+
+    // 友盟统计
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
+    // Debug
+    debugCompile projectDependencies.sherlockLibs
+    releaseCompile projectDependencies.sherlockLibsNoOp
+
+    //友盟统计
+    compile project(':PushSDK')
+    // Test
+    testCompile projectDependencies.jUnit
+}

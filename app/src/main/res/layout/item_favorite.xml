@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:gravity="center_vertical"
+              android:background="@color/white"
+              android:paddingRight="18dp"
+              android:paddingLeft="22dp"
+              android:layout_height="120dp">
+
+    <CheckBox
+        android:id="@+id/checkBok"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="8dp"
+        android:button="@null"
+        android:visibility="gone"
+        android:background="@drawable/selector_cb_address"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_default_sdv_loading"
+        app:placeholderImageScaleType="focusCrop"
+        app:viewAspectRatio="1"/>
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/tv_attr"
+            android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/red"
+            android:text="$ 22.22"/>
+    </LinearLayout>
+
+</LinearLayout>

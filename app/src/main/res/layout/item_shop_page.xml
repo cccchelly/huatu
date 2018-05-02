@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_marginLeft="0.5dp"
+              android:layout_marginRight="0.5dp"
+              android:layout_marginBottom="1dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_default_sdv_loading"
+        app:placeholderImageScaleType="focusCrop"
+        app:viewAspectRatio="1"
+        />
+
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text_333333"
+        android:textSize="12sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="辟邪剑谱"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:textColor="@color/black"
+        android:text="$1000.00"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:paddingLeft="22dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <CheckBox
+            android:id="@+id/checkBok"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:button="@null"
+            android:background="@drawable/selector_cb_address"/>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:text="删除"
+            android:gravity="center"
+            android:textColor="@color/bg_ffffff"
+            android:background="@color/red"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_above="@id/ll_bottom"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.alex.code.foundation.view.CustomToolBar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/line"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:id="@+id/tv_Category"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/red"
+            android:background="@color/white"
+            android:drawableRight="@drawable/ic_arrows_dowm"
+            android:drawablePadding="10dp"
+            android:text="全部分类"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/line"/>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@id/recyclerview"
+                android:background="@color/bg_f0f0f0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_above="@id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"/>
+</RelativeLayout>

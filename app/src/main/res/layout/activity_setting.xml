@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.alex.code.foundation.view.CustomToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/ll_clean_cache"
+        android:background="@color/bg_ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="18dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清除缓存"
+            android:textColor="@color/text_9c9c9c"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_clean_cache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0kb"
+            android:textColor="@color/text_9c9c9c"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/ic_right_next"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"/>
+
+    <TextView
+        android:id="@+id/tv_feedback"
+        android:text="意见反馈"
+        android:textColor="@color/text_848484"
+        style="@style/Text_common_item"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"/>
+
+    <TextView
+        android:id="@+id/tv_about"
+        android:text="关于"
+        android:textColor="@color/text_848484"
+        style="@style/Text_common_item"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"/>
+
+    <LinearLayout
+        android:id="@+id/ll_check_update"
+        android:background="@color/bg_ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="18dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="检测更新"
+            android:textColor="@color/text_9c9c9c"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_check_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1.0.0"
+            android:textColor="@color/text_9c9c9c"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/ic_right_next"/>
+
+    </LinearLayout>
+</LinearLayout>

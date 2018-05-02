@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_history"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_pd_left"
+        android:layout_marginRight="@dimen/common_pd_right"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:drawableRight="@drawable/ic_search_delete"
+            android:gravity="center_vertical"
+            android:text="搜索历史"/>
+
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/flowlayout_history"
+            android:layout_marginTop="5dp"
+            app:max_select="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_hot"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_pd_left"
+        android:layout_marginRight="@dimen/common_pd_right"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="热门商品"/>
+
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/flowlayout_hot"
+            android:layout_marginTop="5dp"
+            app:max_select="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+</LinearLayout>
