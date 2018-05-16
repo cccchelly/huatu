@@ -49,7 +49,7 @@ public class App extends MultiDexApplication implements HasActivityInjector {
     //各平台友盟分享配置
     {
 //        Config.DEBUG = BuildConfig.DEBUG;
-        PlatformConfig.setWeixin("wxfe9ec39bdab4bc87","b53d9ffe1375e1f1d4b133e5c31298f4");
+        PlatformConfig.setWeixin("wxaf0a6bffb9116399","4154463c098692017be833df61092557");
         PlatformConfig.setQQZone("1106568574","9rBrAx8tF0LDcU02");
         PlatformConfig.setSinaWeibo("380660964","48b22c2cacd7030b7c51f538acfe552f","xlwbUrl");// TODO: 2017/11/23  等待替换
     }

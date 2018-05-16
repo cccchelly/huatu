@@ -133,21 +133,22 @@
                 android:paddingLeft="@dimen/common_pd_left"
                 android:paddingRight="@dimen/common_pd_right">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_shop_notice"
-                    android:drawablePadding="3dp"
-                    android:gravity="center_vertical"
-                    android:text="系统公告"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"/>
-
                 <com.alex.code.foundation.view.UPMarqueeView
                     android:id="@+id/upview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"/>
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/ic_shop_notice"
+                        android:drawablePadding="3dp"
+                        android:gravity="center_vertical"
+                        android:text="系统公告"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </com.alex.code.foundation.view.UPMarqueeView>
             </LinearLayout>
 
             <View

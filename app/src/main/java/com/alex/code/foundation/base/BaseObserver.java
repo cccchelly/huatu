@@ -1,6 +1,7 @@
 package com.alex.code.foundation.base;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.alex.code.foundation.App;
@@ -41,6 +42,7 @@ public abstract class BaseObserver<T extends BaseResponse> implements Observer<T
                 onSuccess(response);
                 break;
             case BaseResponse.RESULT_CODE_TOKEN_EXPIRED:
+                Log.i("token_err","token_err");
                 ARouter.getInstance().build("/foundation/login").withInt("main",1000).navigation();
                 break;
             default:

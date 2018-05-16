@@ -62,13 +62,13 @@ public class WebviewActivity extends AppCompatActivity {
         //调用JS方法.安卓版本大于17,加上注解 @JavascriptInterface
         mWebSettings.setJavaScriptEnabled(true);
 
-        saveData(mWebSettings);
+        //saveData(mWebSettings);
 
-        newWin(mWebSettings);
+        //newWin(mWebSettings);
 
-        mWebView.setWebChromeClient(webChromeClient);
-        mWebView.setWebViewClient(webViewClient);
+       // mWebView.setWebChromeClient(webChromeClient);
         mWebView.loadUrl(mUrl);
+        mWebView.setWebViewClient(webViewClient);
 
         mToolbar.setTitle(TextUtils.isEmpty(mTitle) ? getResources().getString(R.string.app_name) : mTitle)
                 .setLeftBackListener(new CustomToolBar.LeftBackListener() {
@@ -126,6 +126,7 @@ public class WebviewActivity extends AppCompatActivity {
          */
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            Log.i("==url==",url);
             view.loadUrl(url);
             return true;
         }

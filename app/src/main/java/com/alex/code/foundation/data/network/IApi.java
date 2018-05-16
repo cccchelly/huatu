@@ -74,7 +74,7 @@ public interface IApi {
      * @return
      */
     @FormUrlEncoded
-    @POST("/app/login/register")
+    @POST("http://open.yinchuanhitech.com/app/login/register")
     Observable<BaseResponse<RegisterBean>> register(@Field("username") String username, @Field("password") String password, @Field("email") String email,
                                       @Field("phone") String phone, @Field("code") String code);
 
@@ -85,7 +85,7 @@ public interface IApi {
      * @return
      */
     @FormUrlEncoded
-    @POST("/app/login/login")
+    @POST("http://open.yinchuanhitech.com/app/login/login")
     Observable<BaseResponse<LoginInfo>> login(@Field("username") String username, @Field("password") String password);
 
     /**
@@ -95,7 +95,7 @@ public interface IApi {
      * @return
      */
     @FormUrlEncoded
-    @POST("/app/login/oauthLogin")
+    @POST("http://open.yinchuanhitech.com/app/login/oauthLogin")
     Observable<BaseResponse<LoginInfo>> oauthLogin(@Field("type") String type, @Field("payload") String payload);
 
     /**

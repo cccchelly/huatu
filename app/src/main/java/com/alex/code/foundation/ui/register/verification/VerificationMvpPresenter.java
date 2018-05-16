@@ -1,7 +1,9 @@
 package com.alex.code.foundation.ui.register.verification;
 
+import com.alex.code.foundation.AppConstants;
 import com.alex.code.foundation.base.BaseMvpPresenter;
 import com.alex.code.foundation.base.BaseObserver;
+import com.alex.code.foundation.base.BaseObserverErr0;
 import com.alex.code.foundation.base.BaseResponse;
 import com.alex.code.foundation.bean.ImageCode;
 import com.alex.code.foundation.data.AppDataManager;
@@ -24,18 +26,19 @@ public class VerificationMvpPresenter extends BaseMvpPresenter<VerificationMvpVi
 
     void fetchVerificationUrl(String phone) {
 
-        getView().showGraphicVerificationCode("http://static.meishifulu.cn/app/captcha/getCode?phone="+phone+"&curTime=" + System.currentTimeMillis());
+        //getView().showGraphicVerificationCode("http://static.meishifulu.cn/app/captcha/getCode?phone="+phone+"&curTime=" + System.currentTimeMillis());
+        getView().showGraphicVerificationCode(AppConstants.PIC_BASE_URL+"app/captcha/getCode?phone="+phone+"&curTime=" + System.currentTimeMillis());
     }
 
     void postVerificationCode(String phone, String code) {
         mAppDataManager.getImageCode(phone,code)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new BaseObserver<BaseResponse<ImageCode>>(getView()) {
+                .subscribe(new BaseObserverErr0<BaseResponse<ImageCode>>(getView()) {
 
                     @Override
                     public void onSuccess(BaseResponse<ImageCode> response) {
-                        if (response.getCode() == 0) {
+                        if (response.getCode() == 1) {
                             getView().verificationSuccessful();
                         } else {
                             getView().verificationFailed();

@@ -2,6 +2,7 @@ package com.alex.code.foundation.ui.register;
 
 import com.alex.code.foundation.base.BaseMvpPresenter;
 import com.alex.code.foundation.base.BaseObserver;
+import com.alex.code.foundation.base.BaseObserverErr0;
 import com.alex.code.foundation.base.BaseResponse;
 import com.alex.code.foundation.bean.RegisterBean;
 import com.alex.code.foundation.data.AppDataManager;

@@ -1,5 +1,7 @@
 package com.alex.code.foundation.ui.login;
 
+import android.util.Log;
+
 import com.alex.code.foundation.base.BaseMvpPresenter;
 import com.alex.code.foundation.base.BaseObserver;
 import com.alex.code.foundation.base.BaseResponse;
@@ -55,6 +57,7 @@ public class LoginPresenter extends BaseMvpPresenter<LoginView> {
 
     public void login(String username, String password) {
         getView().showLoading();
+        Log.i("==login==","name="+username+",pass="+password);
         mAppDataManager.login(username,password)
 //                .delay(4000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
