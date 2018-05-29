@@ -124,7 +124,6 @@ public interface IApi {
 
     /**
      * 获取个人中心主页信息
-     * @param token
      * @return
      */
     @POST("/app/user/index")
@@ -564,7 +563,7 @@ public interface IApi {
      * @return
      */
     @Multipart
-    @POST("/app/upload/multiUploadFile")
+    @POST("http://open.yinchuanhitech.com/app/upload/multiUploadFile")
     Observable<BaseResponse<UploadPicBean>> uploadPic(@Part List<MultipartBody.Part> partList);
 
     /**

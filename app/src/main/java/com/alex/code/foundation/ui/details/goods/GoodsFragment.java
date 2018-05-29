@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -54,7 +57,9 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * Created by dth
@@ -65,99 +70,102 @@ import butterknife.OnClick;
 public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> implements GoodsView {
 
     @BindView(R.id.banner)
-    Banner                   mBanner;
+    Banner mBanner;
     @BindView(R.id.pageOne)
-    Page                     mPageOne;
+    Page mPageOne;
     @BindView(R.id.pageTwo)
-    Page                     mPageTwo;
+    Page mPageTwo;
     @BindView(R.id.container)
-    PageContainer            mContainer;
+    PageContainer mContainer;
     @BindView(R.id.tv_long_name)
-    TextView                 mTvLongName;
+    TextView mTvLongName;
     @BindView(R.id.tv_share)
-    TextView                 mTvShare;
+    TextView mTvShare;
     @BindView(R.id.tv_short_name)
-    TextView              mTvShortName;
+    TextView mTvShortName;
     @BindView(R.id.tv_price)
-    TextView              mTvPrice;
+    TextView mTvPrice;
     @BindView(R.id.tv_old_price)
-    TextView              mTvOldPrice;
+    TextView mTvOldPrice;
     @BindView(R.id.tv_express_fee)
-    TextView              mTvExpressFee;
+    TextView mTvExpressFee;
     @BindView(R.id.tv_sales)
-    TextView              mTvSales;
+    TextView mTvSales;
     @BindView(R.id.tv_ship_address)
-    TextView              mTvShipAddress;
+    TextView mTvShipAddress;
     @BindView(R.id.tv_sum_comment)
-    TextView              mTvSumComment;
+    TextView mTvSumComment;
     @BindView(R.id.sdv_head)
-    SimpleDraweeView      mSdvHead;
+    SimpleDraweeView mSdvHead;
     @BindView(R.id.tv_name)
-    TextView              mTvName;
+    TextView mTvName;
     @BindView(R.id.tv_date)
-    TextView              mTvDate;
+    TextView mTvDate;
     @BindView(R.id.tv_color)
-    TextView              mTvColor;
+    TextView mTvColor;
     @BindView(R.id.tv_attrs)
-    TextView              mTvAttrs;
+    TextView mTvAttrs;
     @BindView(R.id.gridView)
     GridViewForScrollView mGridView;
     @BindView(R.id.tv_more_comment)
-    TextView              mTvMoreComment;
+    TextView mTvMoreComment;
     @BindView(R.id.tv_comment)
-    TextView              mTvComment;
+    TextView mTvComment;
     @BindView(R.id.ll_comment_container)
-    LinearLayout          mLlCommentContainer;
+    LinearLayout mLlCommentContainer;
     @BindView(R.id.webView)
-    WebView               mWebView;
+    WebView mWebView;
     @BindView(R.id.rv_recommend)
-    RecyclerView          mRvRecommend;
+    RecyclerView mRvRecommend;
     @BindView(R.id.sdv_shop_logo)
     SimpleDraweeView mSdvShopLogo;
     @BindView(R.id.tv_shop_name)
-    TextView         mTvShopName;
+    TextView mTvShopName;
     @BindView(R.id.tv_shop_level)
-    TextView         mTvShopLevel;
+    TextView mTvShopLevel;
     @BindView(R.id.tv_focus_num)
-    TextView                 mTvFocusNum;
+    TextView mTvFocusNum;
     @BindView(R.id.tv_goods_num)
-    TextView                 mTvGoodsNum;
+    TextView mTvGoodsNum;
     @BindView(R.id.tv_logistics_level)
-    TextView                 mTvLogisticsLevel;
+    TextView mTvLogisticsLevel;
     @BindView(R.id.tv_goods_level)
-    TextView                 mTvGoodsLevel;
+    TextView mTvGoodsLevel;
     @BindView(R.id.tv_service_level)
-    TextView                 mTvServiceLevel;
+    TextView mTvServiceLevel;
     @BindView(R.id.tv_new_money)
-    TextView                 mTvNewMoney;
+    TextView mTvNewMoney;
     @BindView(R.id.tv_old_money)
-    TextView                 mTvOldMoney;
+    TextView mTvOldMoney;
     @BindView(R.id.timerView)
     SnapUpCountDownTimerView mTimerView;
     @BindView(R.id.ll_time_container)
-    LinearLayout             mLlTimeContainer;
+    LinearLayout mLlTimeContainer;
     @BindView(R.id.ll_contact_kefu)
-    LinearLayout             mLlContactKefu;
+    LinearLayout mLlContactKefu;
     @BindView(R.id.ll_enter_shop)
-    LinearLayout             mLlEnterShop;
+    LinearLayout mLlEnterShop;
     @BindView(R.id.ll_shop)
-    LinearLayout             mLlShop;
+    LinearLayout mLlShop;
     @BindView(R.id.rb_recommend)
-    RadioButton              mRbRecommend;
+    RadioButton mRbRecommend;
     @BindView(R.id.rb_top)
-    RadioButton              mRbTop;
+    RadioButton mRbTop;
     @BindView(R.id.radioGroup)
-    RadioGroup               mRadioGroup;
+    RadioGroup mRadioGroup;
 
     @Inject
     ToastInstance mToastInstance;
     public static final String GOODS_ID = "goods_id";
+    @BindView(R.id.tv_manjiansong)
+    TextView mTvManjiansong;
+    Unbinder unbinder;
 
     private ArrayList<String> list = new ArrayList<>();
     private CommentPicAdapter mCommentPicAdapter;
     private int lastPage = 0;
-    private String                                       mGoodsId;
-    private RecommendAdapter                             mRecommendAdapter;
+    private String mGoodsId;
+    private RecommendAdapter mRecommendAdapter;
     private List<GoodsDetailBean.GoodsRecommend.ADGoods> mRec_goods;
     private List<GoodsDetailBean.GoodsRecommend.ADGoods> mSen_goods;
     private String mShop_qq;
@@ -247,7 +255,7 @@ public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> im
         mRecommendAdapter.setOnItemClickListener((adapter, view, position) -> {
             GoodsDetailBean.GoodsRecommend.ADGoods adGoods = mRecommendAdapter.getData().get(position);
             ARouter.getInstance().build("/foundation/goodsDetail")
-                    .withString("goodsId",adGoods.getGoods_id()+"")
+                    .withString("goodsId", adGoods.getGoods_id() + "")
                     .navigation();
         });
     }
@@ -274,12 +282,12 @@ public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> im
 
             mSdvShopLogo.setImageURI(AppConstants.PIC_BASE_URL + shop_info.getShop_avatar());
             mTvShopName.setText(shop_info.getShop_name());
-            mTvShopLevel.setText("综合评分: "+shop_info.getShop_syn());
+            mTvShopLevel.setText("综合评分: " + shop_info.getShop_syn());
             mTvFocusNum.setText(shop_info.getShop_atte());
             mTvGoodsNum.setText(shop_info.getGoods_number());
-            CommonUtils.setTwoTextColor("物流: "+shop_info.getGrade_wu(),shop_info.getGrade_wu(), Color.RED,mTvLogisticsLevel);
-            CommonUtils.setTwoTextColor("商品: "+shop_info.getGoods_gra(),shop_info.getGoods_gra(), Color.RED,mTvGoodsLevel);
-            CommonUtils.setTwoTextColor("店铺: "+shop_info.getShop_gra(),shop_info.getShop_gra(), Color.RED,mTvServiceLevel);
+            CommonUtils.setTwoTextColor("物流: " + shop_info.getGrade_wu(), shop_info.getGrade_wu(), Color.RED, mTvLogisticsLevel);
+            CommonUtils.setTwoTextColor("商品: " + shop_info.getGoods_gra(), shop_info.getGoods_gra(), Color.RED, mTvGoodsLevel);
+            CommonUtils.setTwoTextColor("店铺: " + shop_info.getShop_gra(), shop_info.getShop_gra(), Color.RED, mTvServiceLevel);
 
         }
         mGoods_detail = goodsDetailBean.getGoods_detail();
@@ -294,7 +302,7 @@ public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> im
                 int hours = (int) ((goods_time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 int minutes = (int) ((goods_time % (1000 * 60 * 60)) / (1000 * 60));
                 int seconds = (int) ((goods_time % (1000 * 60)) / 1000);
-                mTimerView.setTime(hours,minutes,seconds);
+                mTimerView.setTime(hours, minutes, seconds);
                 mTimerView.start();
             } else {
                 mLlTimeContainer.setVisibility(View.GONE);
@@ -305,10 +313,11 @@ public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> im
             mShop_id = mGoods_detail.getShop_id();
             mTvLongName.setText(mGoods_detail.getGoods_name());
             mTvShortName.setText(mGoods_detail.getIntroduction());
+            mTvManjiansong.setText(mGoods_detail.getMansong_name());
             mTvPrice.setText("￥" + mGoods_detail.getPromotion_price());//商品价格
             mTvOldPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             mTvOldPrice.setText(String.format(getString(R.string.goods_old_money), mGoods_detail.getPrice() + ""));//商品原价
-            mTvExpressFee.setText(String.format(getString(R.string.goods_express_fee), mGoods_detail.getShipping_fee()));//快递费
+            mTvExpressFee.setText("评价:"+mGoods_detail.getEvaluates());//评价
             mTvSales.setText("月销量" + mGoods_detail.getSales());
             mTvShipAddress.setText(mGoods_detail.getShop_site());//发货地
             mTvSumComment.setText("宝贝评价(" + evaluates_count + ")");
@@ -343,7 +352,7 @@ public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> im
     }
 
 
-    @OnClick({R.id.tv_share, R.id.tv_more_comment,R.id.ll_contact_kefu,R.id.ll_enter_shop})
+    @OnClick({R.id.tv_share, R.id.tv_more_comment, R.id.ll_contact_kefu, R.id.ll_enter_shop})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_share:
@@ -358,7 +367,7 @@ public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> im
                     return;
                 }
                 try {
-                    String url = "mqqwpa://im/chat?chat_type=wpa&uin="+mShop_qq;
+                    String url = "mqqwpa://im/chat?chat_type=wpa&uin=" + mShop_qq;
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -368,7 +377,7 @@ public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> im
             case R.id.ll_enter_shop:
                 if (!TextUtils.isEmpty(mShop_id)) {
                     ARouter.getInstance().build("/foundation/shopHome")
-                            .withString("shopId",mShop_id)
+                            .withString("shopId", mShop_id)
                             .navigation();
                 }
                 break;
@@ -410,6 +419,20 @@ public class GoodsFragment extends BaseMvpFragment<GoodsView, GoodsPresenter> im
                 })
                 //                .share()
                 .open();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
 

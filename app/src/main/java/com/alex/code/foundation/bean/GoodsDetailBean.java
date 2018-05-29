@@ -102,7 +102,15 @@ public class GoodsDetailBean {
         private String              share_url;
         private EvaluatesInfoEntity evaluates_info;
         private List<ImgListEntity> img_list;
+        private String mansong_name;
 
+        public String getMansong_name() {
+            return mansong_name;
+        }
+
+        public void setMansong_name(String mansong_name) {
+            this.mansong_name = mansong_name;
+        }
 
         public int getGoods_type() {
             return goods_type;

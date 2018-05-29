@@ -35,7 +35,7 @@ public class SnapUpCountDownTimerView extends LinearLayout {
     private int min_unit;
     private int sec_decade;
     private int sec_unit;
-    private  int mTextSize = DensityUtil.dip2px(12);
+    private  int mTextSize = DensityUtil.dip2px(6);
 
 
     private Timer timer;
